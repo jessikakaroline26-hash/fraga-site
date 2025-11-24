@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 
 import Header from "./components/Header";
 import Hero from "./components/Hero";
@@ -20,10 +20,14 @@ import FretePage from "./pages/FretePage";
 import GarantiaPage from "./pages/GarantiaPage";
 import PoliticaPage from "./pages/PoliticaPage";
 
+// 👉 IMPORTA a nova página de montar kit
+import KitPage from "./pages/Kit/KitPage";
+
 export default function App() {
   return (
     <div className="min-h-screen bg-[#0c0c0c] text-white font-sans">
 
+      {/* Cabeçalho fixo */}
       <Header />
 
       <Routes>
@@ -34,6 +38,31 @@ export default function App() {
           element={
             <>
               <Hero />
+
+              {/* 🔥 BOTÃO ESPECIAL — MONTE SEU KIT */}
+              <div className="flex justify-center mt-10 mb-16">
+                <Link
+                  to="/kit"
+                  className="group relative inline-flex items-center gap-3 px-10 py-4 
+                             text-xl font-semibold rounded-full 
+                             bg-gradient-to-r from-[#d9b26f] to-[#b28c4a]
+                             text-black shadow-[0_0_20px_rgba(217,178,111,0.3)]
+                             hover:shadow-[0_0_30px_rgba(217,178,111,0.5)]
+                             transition-all duration-300 transform hover:scale-[1.03]"
+                >
+
+                  {/* Ícone */}
+                  <span className="text-3xl group-hover:rotate-12 transition-transform duration-300">
+                    🔥
+                  </span>
+
+                  Monte Seu Kit
+
+                  {/* Efeito de brilho */}
+                  <span className="absolute inset-0 rounded-full bg-white/20 opacity-0 
+                                   group-hover:opacity-20 transition duration-300"></span>
+                </Link>
+              </div>
 
               {/* KITS */}
               <section className="py-16 px-6 md:px-20">
@@ -48,7 +77,7 @@ export default function App() {
                       id={kit.id}
                       title={kit.title}
                       price={kit.price}
-                      images={kit.images}  // CORRETO
+                      images={kit.images}
                     />
                   ))}
                 </div>
@@ -67,7 +96,7 @@ export default function App() {
                       id={cut.id}
                       title={cut.title}
                       price={cut.price}
-                      images={cut.images}  // CORREÇÃO AQUI!
+                      images={cut.images}
                     />
                   ))}
                 </div>
@@ -83,6 +112,9 @@ export default function App() {
 
         {/* ---------------- PÁGINA DO CARRINHO ---------------- */}
         <Route path="/carrinho" element={<CartPage />} />
+
+        {/* ---------------- PÁGINA: MONTAR KIT ---------------- */}
+        <Route path="/kit" element={<KitPage />} />
 
         {/* ---------------- PÁGINAS DO MENU ---------------- */}
         <Route path="/kits" element={<KitsPage />} />

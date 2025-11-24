@@ -36,6 +36,15 @@ export default function MobileMenu({ isOpen, onClose, cartCount }) {
             Sobre
           </Link>
 
+          {/* 🔥 NOVO ITEM — MONTAR KIT */}
+          <Link
+            to="/kit"
+            onClick={onClose}
+            className="text-[#d9b26f] font-semibold hover:text-white transition"
+          >
+            Montar Kit
+          </Link>
+
           <Link to="/kits" onClick={onClose} className="text-gray-300 hover:text-[#d9b26f]">
             Kits
           </Link>

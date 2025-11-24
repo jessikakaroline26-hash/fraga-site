@@ -2,10 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>fraga-site</title>
+
+    <!-- Ícone padrão do navegador -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+    <!-- MANIFESTO DO PWA -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- ÍCONE PARA IPHONE/IPAD -->
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+
+    <!-- SERVICE WORKER -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/service-worker.js");
+      }
+    </script>
   </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>

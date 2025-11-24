@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Opcional — estilos globais do seu site */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;   /* fundo preto */
+  color: #fff;              /* texto branco */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+               Roboto, Helvetica, Arial, sans-serif;
+}
+
+img {
+  user-select: none;
+}

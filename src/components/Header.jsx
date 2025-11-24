@@ -25,8 +25,18 @@ export default function Header() {
 
         {/* MENU DESKTOP */}
         <nav className="hidden md:flex items-center gap-10 text-lg">
+
           <Link to="/" className="text-gray-300 hover:text-[#d9b26f] transition">Home</Link>
           <Link to="/sobre" className="text-gray-300 hover:text-[#d9b26f] transition">Sobre</Link>
+
+          {/* 🔥 NOVO ITEM: MONTAR KIT */}
+          <Link
+            to="/kit"
+            className="text-[#d9b26f] font-semibold hover:text-white transition"
+          >
+            Montar Kit
+          </Link>
+
           <Link to="/kits" className="text-gray-300 hover:text-[#d9b26f] transition">Kits</Link>
           <Link to="/cortes" className="text-gray-300 hover:text-[#d9b26f] transition">Cortes</Link>
           <Link to="/frete" className="text-gray-300 hover:text-[#d9b26f] transition">Frete & Entrega</Link>
